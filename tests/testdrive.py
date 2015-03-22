@@ -12,7 +12,7 @@ dkant, March 2015
 
 """
 
-import trnzscrybe_master as xscribe
+import trnzscrybe_master.trnzscrybe as xscribe
 import abjad as abj
 import random
 
