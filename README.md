@@ -20,3 +20,6 @@ super alpha—i.e., not yet for public consumption!!!
 
 ### test suite
 * there's a test suite to make sure we don't break things. this can be run from the terminal.
+
+### this branch
+* music classes to replace reliance on abjad interal
