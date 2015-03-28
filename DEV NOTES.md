@@ -26,6 +26,10 @@
 ### api
 * i want to expose as little as possible—really just the Note object and the main transcriber call.
 
+###### Tuplet
+* min_required counts number of note onsets
+
+
 ---
 
 ### transcription hierarchy
