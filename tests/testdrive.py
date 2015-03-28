@@ -147,7 +147,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\td'8 [\n\t\t\te'8 ]\n\t\t}\n\t\t{\n\t\t\tf'16 [\n\t\t\tc'16\n\t\t\td'16\n\t\t\te'16 ]\n\t\t}\n\t\t{\n\t\t\tf'4\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tas'2\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\td'8\n\t\t\te'8\n\t\t}\n\t\t{\n\t\t\tf'16\n\t\t\tc'16\n\t\t\td'16\n\t\t\te'16\n\t\t}\n\t\t{\n\t\t\tf'4\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tas'2\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -183,7 +183,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tr16\n\t\t\tf'8. ~\n\t\t}\n\t\t{\n\t\t\tf'4 ~\n\t\t}\n\t\t{\n\t\t\tf'16\n\t\t\tr8\n\t\t\tas16 ~\n\t\t}\n\t\t{\n\t\t\tas4 ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tas8. [\n\t\t\ta'16 ~ ]\n\t\t}\n\t\t{\n\t\t\ta'4 ~\n\t\t}\n\t\t{\n\t\t\ta'8. [\n\t\t\tgs'16 ]\n\t\t}\n\t\t{\n\t\t\tr16\n\t\t\tas8. ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tas4 ~\n\t\t}\n\t\t{\n\t\t\tas16\n\t\t\tr8.\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tr16\n\t\t\tf'8. ~\n\t\t}\n\t\t{\n\t\t\tf'4 ~\n\t\t}\n\t\t{\n\t\t\tf'16\n\t\t\tr8\n\t\t\tas16 ~\n\t\t}\n\t\t{\n\t\t\tas4 ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tas8.\n\t\t\ta'16 ~\n\t\t}\n\t\t{\n\t\t\ta'4 ~\n\t\t}\n\t\t{\n\t\t\ta'8.\n\t\t\tgs'16\n\t\t}\n\t\t{\n\t\t\tr16\n\t\t\tas8. ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tas4 ~\n\t\t}\n\t\t{\n\t\t\tas16\n\t\t\tr8.\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -227,7 +227,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 2/3 {\n\t\t\tc'8 [\n\t\t\td'8\n\t\t\te'8 ]\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tc'16 [\n\t\t\td'16\n\t\t\te'16\n\t\t\tf'16\n\t\t\tg'16 ]\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc'16 [\n\t\t\td'16\n\t\t\te'16\n\t\t\tf'16\n\t\t\tg'16\n\t\t\ta'16 ]\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tc'16 [\n\t\t\td'16\n\t\t\te'16\n\t\t\tf'16\n\t\t\tg'16\n\t\t\ta'16\n\t\t\tb'16 ]\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr1\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 2/3 {\n\t\t\tc'8\n\t\t\td'8\n\t\t\te'8\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tc'16\n\t\t\td'16\n\t\t\te'16\n\t\t\tf'16\n\t\t\tg'16\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc'16\n\t\t\td'16\n\t\t\te'16\n\t\t\tf'16\n\t\t\tg'16\n\t\t\ta'16\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tc'16\n\t\t\td'16\n\t\t\te'16\n\t\t\tf'16\n\t\t\tg'16\n\t\t\ta'16\n\t\t\tb'16\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr1\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -340,7 +340,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'4 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc'16 [\n\t\t\td'4 ~\n\t\t\td'16 ~ ]\n\t\t}\n\t\t\\times 2/3 {\n\t\t\td'8 [\n\t\t\te'4 ~ ]\n\t\t}\n\t\t{\n\t\t\te'8 [\n\t\t\tf'8 ~ ]\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tf'4 [\n\t\t\tg'8 ~ ]\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tg'4 ~ [\n\t\t\tg'16\n\t\t\ta'16 ~ ]\n\t\t}\n\t\t{\n\t\t\ta'4\n\t\t}\n\t\t{\n\t\t\tb'4 ~\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tb'16 [\n\t\t\tc''4 ~\n\t\t\tc''16 ~ ]\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc''8\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'4 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc'16\n\t\t\td'4 ~\n\t\t\td'16 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\td'8\n\t\t\te'4 ~\n\t\t}\n\t\t{\n\t\t\te'8\n\t\t\tf'8 ~\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tf'4\n\t\t\tg'8 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tg'4 ~\n\t\t\tg'16\n\t\t\ta'16 ~\n\t\t}\n\t\t{\n\t\t\ta'4\n\t\t}\n\t\t{\n\t\t\tb'4 ~\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tb'16\n\t\t\tc''4 ~\n\t\t\tc''16 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc''8\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -367,7 +367,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'2\n\t\t}\n\t\t{\n\t\t\td'2\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\te'4\n\t\t}\n\t\t{\n\t\t\tf'4\n\t\t}\n\t\t{\n\t\t\tg'4\n\t\t}\n\t\t{\n\t\t\ta'4\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tb'8 [\n\t\t\tc''8 ]\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'2\n\t\t}\n\t\t{\n\t\t\td'2\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\te'4\n\t\t}\n\t\t{\n\t\t\tf'4\n\t\t}\n\t\t{\n\t\t\tg'4\n\t\t}\n\t\t{\n\t\t\ta'4\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tb'8\n\t\t\tc''8\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -457,7 +457,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 6/4\n\t\t{\n\t\t\te'4 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\te'8 [\n\t\t\te'8.\n\t\t\tf'8 ~ ]\n\t\t}\n\t\t{\n\t\t\tf'4\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tr4.\n\t\t\ta'16 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\ta'4 [\n\t\t\tb'8 ~ ]\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tb'8. [\n\t\t\tb'8 ~ ]\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tb'4 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tb'8 [\n\t\t\tb'4\n\t\t\tb2 ~ ]\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tb16 [\n\t\t\tb'4 ~\n\t\t\tb'16\n\t\t\tas'16 ~ ]\n\t\t}\n\t\t{\n\t\t\tas'4 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tas'4 [\n\t\t\tfs'8. ]\n\t\t}\n\t}\n\t{\n\t\t\\time 4/8\n\t\t{\n\t\t\t\\grace {\n\t\t\t\t<ds'>16\n\t\t\t}\n\t\t\tas8 ~\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tas8\n\t\t\tr32\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tr8\n\t\t\tr32\n\t\t\tb'32 ~\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tb'16 [\n\t\t\tcs'16\n\t\t\te'32 ~ ]\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\te'8\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tf'32 [\n\t\t\tfs'8. ~ ]\n\t\t}\n\t\t{\n\t\t\tfs'32 [\n\t\t\tas'16. ~ ]\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tas'32\n\t\t\tr8\n\t\t\te'16 ~\n\t\t}\n\t}\n\t{\n\t\t\\time 6/8\n\t\t\\times 4/7 {\n\t\t\te'8 ~ [\n\t\t\te'32\n\t\t\tfs'16 ~ ]\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tfs'8. [\n\t\t\tc'8\n\t\t\tf'8 ~ ]\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tf'16. [\n\t\t\tb'32 ]\n\t\t\tr32\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t}\n\t{\n\t\t\\time 6/4\n\t\t\\times 2/3 {\n\t\t\tr4\n\t\t\tgs'8 ~\n\t\t}\n\t\t{\n\t\t\tgs'16 [\n\t\t\tas'16\n\t\t\tc''8 ~ ]\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tc''8 [\n\t\t\tg'8. ]\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tg'4\n\t\t\tr4.\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 6/4\n\t\t{\n\t\t\te'4 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\te'8\n\t\t\te'8.\n\t\t\tf'8 ~\n\t\t}\n\t\t{\n\t\t\tf'4\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tr4.\n\t\t\ta'16 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\ta'4\n\t\t\tb'8 ~\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tb'8.\n\t\t\tb'8 ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tb'4 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tb'8\n\t\t\tb'4\n\t\t\tb2 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tb16\n\t\t\tb'4 ~\n\t\t\tb'16\n\t\t\tas'16 ~\n\t\t}\n\t\t{\n\t\t\tas'4 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tas'4\n\t\t\tfs'8.\n\t\t}\n\t}\n\t{\n\t\t\\time 4/8\n\t\t{\n\t\t\t\\grace {\n\t\t\t\t<ds'>16\n\t\t\t}\n\t\t\tas8 ~\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tas8\n\t\t\tr32\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tr8\n\t\t\tr32\n\t\t\tb'32 ~\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tb'16\n\t\t\tcs'16\n\t\t\te'32 ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\te'8\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tf'32\n\t\t\tfs'8. ~\n\t\t}\n\t\t{\n\t\t\tfs'32\n\t\t\tas'16. ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tas'32\n\t\t\tr8\n\t\t\te'16 ~\n\t\t}\n\t}\n\t{\n\t\t\\time 6/8\n\t\t\\times 4/7 {\n\t\t\te'8 ~\n\t\t\te'32\n\t\t\tfs'16 ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tfs'8.\n\t\t\tc'8\n\t\t\tf'8 ~\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tf'16.\n\t\t\tb'32\n\t\t\tr32\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t}\n\t{\n\t\t\\time 6/4\n\t\t\\times 2/3 {\n\t\t\tr4\n\t\t\tgs'8 ~\n\t\t}\n\t\t{\n\t\t\tgs'16\n\t\t\tas'16\n\t\t\tc''8 ~\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tc''8\n\t\t\tg'8.\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tg'4\n\t\t\tr4.\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -508,7 +508,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs, 'beat_division_scheme': bds}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 2/3 {\n\t\t\tc'2 [\n\t\t\td'4 ]\n\t\t}\n\t\t\\times 2/3 {\n\t\t\te'2 [\n\t\t\tf'4 ]\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tg'2 [\n\t\t\ta'4 ]\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tb'2 [\n\t\t\tc''4 ]\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tr2.\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tr2.\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 2/3 {\n\t\t\tc'2\n\t\t\td'4\n\t\t}\n\t\t\\times 2/3 {\n\t\t\te'2\n\t\t\tf'4\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tg'2\n\t\t\ta'4\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tb'2\n\t\t\tc''4\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tr2.\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tr2.\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -577,7 +577,116 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\ta'4 -\\accent \\mf ~\n\t\t}\n\t\t{\n\t\t\ta'8 [\n\t\t\tds'8 -\\turn ~ ]\n\t\t}\n\t\t{\n\t\t\tds'8\n\t\t\tr8\n\t\t}\n\t\t{\n\t\t\te'4 -\\fermata \\ppp\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr1\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\ta'4 -\\accent \\mf ~\n\t\t}\n\t\t{\n\t\t\ta'8\n\t\t\tds'8 -\\turn ~\n\t\t}\n\t\t{\n\t\t\tds'8\n\t\t\tr8\n\t\t}\n\t\t{\n\t\t\te'4 -\\fermata \\ppp\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr1\n\t\t}\n\t}\n}"
+
+snips += [(foo, solution_string)]
+
+#-----------------------------------------------#
+
+def foo():
+    """tuplet complexity: min required"""
+
+    # params
+    tempi = [60]
+    time_sigs = [(4,4)]
+
+    # create an empty BeatDivsionScheme and add to it
+    bds = xscribe.BeatDivisionScheme()
+
+    # duration 4 beats
+    bds.add_tuplet((1,1), 4.0)    # /1 whole note
+    bds.add_tuplet((3,2), 2.0)    # /3 half note triplet
+    bds.add_tuplet((5,4), 1.0)    # /5 quarter note quintuplet
+    bds.add_tuplet((7,4), 1.0)    # /5 quarter note septuplet
+
+    # duration 2 beats
+    bds.add_tuplet((1,1), 2.0)    # /1 half note
+    bds.add_tuplet((3,2), 1.0)    # /3 quarter note triplet
+    bds.add_tuplet((5,4), 1.0/2)  # /5 eighth note quintuplet
+    bds.add_tuplet((7,4), 1.0/2)  # /7 eighth note septuplet
+
+    # duration 1 beat
+    bds.add_tuplet((1,1), 1.0)    # /1 quarter note
+    bds.add_tuplet((2,2), 1.0/2)  # /2 eighth note
+    bds.add_tuplet((3,2), 1.0/2)  # /3 eighth note triplet
+    bds.add_tuplet((4,4), 1.0/4)  # /4 sixteenth note
+    bds.add_tuplet((5,4), 1.0/4, min_required=3)  # /5 quintuplet
+    bds.add_tuplet((6,4), 1.0/4, min_required=3)  # /6 sextuplet
+    bds.add_tuplet((7,4), 1.0/4, min_required=3)  # /7 septuplet
+
+    # notes
+    notes = []
+    notes += xscribe.make_note(0.00, 60, 1.00)
+    notes += xscribe.make_note(1.00, 62, 1.0/5)       # 2 quintuplets
+    notes += xscribe.make_note(1.00+1.0/5, 64, 4.0/5)
+    notes += xscribe.make_note(2.00, 65, 1.0/6)       # 2 sextuplets
+    notes += xscribe.make_note(2.00+1.0/6, 67, 5.0/6)
+    notes += xscribe.make_note(3.00, 69, 1.0/7)       # 2 septuplets
+    notes += xscribe.make_note(3.00+1.0/7, 71, 6.0/7)
+
+    # return it
+    return notes, {'tempi': tempi, 'time_signatures': time_sigs, 'beat_division_scheme': bds}
+
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\td'16\n\t\t\te'8.\n\t\t}\n\t\t{\n\t\t\tf'16\n\t\t\tg'8.\n\t\t}\n\t\t{\n\t\t\ta'16\n\t\t\tb'8.\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr1\n\t\t}\n\t}\n}"
+
+snips += [(foo, solution_string)]
+
+#-----------------------------------------------#
+
+def foo():
+    """tuplet complexity: weighting"""
+
+    # params
+    tempi = [60]
+    time_sigs = [(4,4)]
+
+    # create an empty BeatDivsionScheme and add to it
+    bds = xscribe.BeatDivisionScheme()
+
+    # duration 4 beats
+    bds.add_tuplet((1,1), 4.0)    # /1 whole note
+    bds.add_tuplet((3,2), 2.0)    # /3 half note triplet
+    bds.add_tuplet((5,4), 1.0)    # /5 quarter note quintuplet
+    bds.add_tuplet((7,4), 1.0)    # /5 quarter note septuplet
+
+    # duration 2 beats
+    bds.add_tuplet((1,1), 2.0)    # /1 half note
+    bds.add_tuplet((3,2), 1.0)    # /3 quarter note triplet
+    bds.add_tuplet((5,4), 1.0/2)  # /5 eighth note quintuplet
+    bds.add_tuplet((7,4), 1.0/2, weight=1*7.0/4)  # /7 eighth note septuplet
+
+    # duration 1 beat
+    bds.add_tuplet((1,1), 1.0)    # /1 quarter note
+    bds.add_tuplet((2,2), 1.0/2)  # /2 eighth note
+    bds.add_tuplet((3,2), 1.0/2)  # /3 eighth note triplet
+    bds.add_tuplet((4,4), 1.0/4)  # /4 sixteenth note
+    bds.add_tuplet((5,4), 1.0/4, weight=2*5.0/4)  # /5 quintuplet
+    bds.add_tuplet((6,4), 1.0/4, weight=4*6.0/4)  # /6 sextuplet
+    bds.add_tuplet((7,4), 1.0/4, weight=6*7.0/4)  # /7 septuplet
+
+    # notes
+    random.seed(0)
+
+    notes = []
+    curr_time = 0
+    total_time = 20.0
+
+    while curr_time < total_time:
+
+        note_dur = random.random()
+        
+        if random.randint(0,5) <= 4:
+            note_pitch = random.randint(58,72)
+            notes += xscribe.make_note(curr_time, note_pitch, note_dur)
+            curr_time += note_dur
+            
+        else:
+            curr_time += note_dur
+
+    # return it
+    return notes, {'tempi': tempi, 'time_signatures': time_sigs, 'beat_division_scheme': bds}
+
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 4/7 {\n\t\t\te'4.\n\t\t\te'8\n\t\t\tf'4.\n\t\t}\n\t\t{\n\t\t\tr8\n\t\t\ta'8\n\t\t}\n\t\t\\times 4/5 {\n\t\t\tb'8.\n\t\t\tb'8 ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tb'8\n\t\t\tb'8\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tb4\n\t\t\tb'8.\n\t\t}\n\t\t{\n\t\t\tas'4\n\t\t}\n\t\t{\n\t\t\tfs'16\n\t\t\t\\grace {\n\t\t\t\t<ds'>16.\n\t\t\t}\n\t\t\tas8.\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr8\n\t\t\tb'16\n\t\t\tcs'16\n\t\t}\n\t\t{\n\t\t\te'4\n\t\t}\n\t\t{\n\t\t\t\\grace {\n\t\t\t\t<f'>8\n\t\t\t}\n\t\t\tfs'4\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tas'4\n\t\t\tr8\n\t\t}\n\t}\n\t{\n\t\t\\times 4/7 {\n\t\t\tr8\n\t\t\te'4\n\t\t\tfs'4\n\t\t\tc'8\n\t\t\tf'8 ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tf'8\n\t\t\t\\grace {\n\t\t\t\t<b'>8\n\t\t\t}\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr16\n\t\t\tgs'8\n\t\t\tas'16\n\t\t}\n\t\t{\n\t\t\tc''4\n\t\t}\n\t\t{\n\t\t\tg'8\n\t\t\tr8\n\t\t}\n\t\t{\n\t\t\tr8\n\t\t\tg'8 ~\n\t\t}\n\t}\n\t{\n\t\t\\times 2/3 {\n\t\t\tg'8\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -624,7 +733,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 2/3 {\n\t\t\tc'8 [\n\t\t\tc'8\n\t\t\tc'8 ~ ]\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4 ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 2/3 {\n\t\t\tc'8\n\t\t\tc'8\n\t\t\tc'8 ~\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4 ~\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t\t{\n\t\t\tr2\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -650,7 +759,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 4/5 {\n\t\t\tc'16 [\n\t\t\tc'16\n\t\t\tc'8\n\t\t\tc'16 ]\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr1\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t\\times 4/5 {\n\t\t\tc'16\n\t\t\tc'16\n\t\t\tc'8\n\t\t\tc'16\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t\t{\n\t\t\tc'4\n\t\t}\n\t}\n\t{\n\t\t{\n\t\t\tr1\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -671,7 +780,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'4 ~\n\t\t}\n\t\t{\n\t\t\tc'8 [\n\t\t\tc'8 ~ ]\n\t\t}\n\t\t{\n\t\t\tc'8\n\t\t\tr8\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 4/4\n\t\t{\n\t\t\tc'4 ~\n\t\t}\n\t\t{\n\t\t\tc'8\n\t\t\tc'8 ~\n\t\t}\n\t\t{\n\t\t\tc'8\n\t\t\tr8\n\t\t}\n\t\t{\n\t\t\tr4\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 
@@ -695,7 +804,7 @@ def foo():
     # return it
     return notes, {'tempi': tempi, 'time_signatures': time_sigs}
 
-solution_string = "\\new Staff {\n\t{\n\t\t\\time 6/4\n\t\t{\n\t\t\tgs'4 ~\n\t\t}\n\t\t{\n\t\t\tgs'16 [\n\t\t\te'8. ~ ]\n\t\t}\n\t\t\\times 4/7 {\n\t\t\te'16 [\n\t\t\tc''4. ~ ]\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc''16 [\n\t\t\tcs'4 ~\n\t\t\tcs'16 ]\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tas2 ~ [\n\t\t\tas8 ]\n\t\t\tr4\n\t\t}\n\t}\n}"
+solution_string = "\\new Staff {\n\t{\n\t\t\\time 6/4\n\t\t{\n\t\t\tgs'4 ~\n\t\t}\n\t\t{\n\t\t\tgs'16\n\t\t\te'8. ~\n\t\t}\n\t\t\\times 4/7 {\n\t\t\te'16\n\t\t\tc''4. ~\n\t\t}\n\t\t\\times 2/3 {\n\t\t\tc''16\n\t\t\tcs'4 ~\n\t\t\tcs'16\n\t\t}\n\t\t\\times 4/7 {\n\t\t\tas2 ~\n\t\t\tas8\n\t\t\tr4\n\t\t}\n\t}\n}"
 
 snips += [(foo, solution_string)]
 

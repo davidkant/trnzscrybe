@@ -25,17 +25,33 @@ class Flower:
 
         # filter notes in range
         notes_in_range = filter(lambda note: sum_to_this_node <= note.time < sum_through_this_node, notes)
-        if verbose: print 'note_in_range: {0}'.format(notes_in_range)
+        if verbose: print 'notes_in_range: {0}'.format(notes_in_range)
         
         # my hits
         hit_points = np.linspace(sum_to_this_node, sum_through_this_node, self.value+1)
         if verbose: print 'hit_points: {0}'.format(hit_points)
         
-        # error
-        self.error = sum([min([abs(n.time-p) 
+        # calc error
+
+        delta = lambda a,b: abs(b - a)
+        # delta = lambda a,b: (b - a)**2
+        # delta = lambda a,b: abs(b - a)**0.5
+
+        self.error = sum([min([delta(n.time, p) 
                                for p in hit_points]) 
                           for n in notes_in_range])
-        if verbose: print 'error: {0}'.format(self.error)
+
+        error_unweighted  = self.error
+
+        # check min required
+        if len(filter(lambda n: n.onoff == 'on', notes_in_range)) < self.mtuplet.min_required: 
+            self.error = 999.999        
+            
+        # apply weight
+        self.error *= float(self.mtuplet.weight)
+
+        if verbose: print 'error: {0}, min_required: {1}, weight: {2}, total error{3}'.format(
+            error_unweighted, self.mtuplet.min_required, self.mtuplet.weight, self.error)
         
         # return self
         return self
@@ -133,6 +149,7 @@ class Node:
         return sum([flower.error for flower in self.bouquet()])
         
     def measure(self):
+
         return [n.value for n in self.ancestors()] + [self.value]
     
     def to_path(self):

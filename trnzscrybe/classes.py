@@ -67,11 +67,13 @@ class Note:
 class Tuplet:
     """Division of a beat(s)."""
     
-    def __init__(self, multiply, base):
+    def __init__(self, multiply, base, min_required=0, weight=1):
         self.multiply = multiply
         self.base = base
         # self.duration = self.multiply[1]*self.base # now in beats
         self.divisions = self.multiply[0]
+        self.min_required = min_required
+        self.weight = weight
         self.hits = dict()
 
     # def duration_in_beats(self, time_signature):
@@ -161,5 +163,5 @@ class BeatDivisionScheme():
     def clear_tuplets(self):
         self.tuplets = []
 
-    def add_tuplet(self, multiply, base):
-        self.tuplets.append(Tuplet(multiply, base))
+    def add_tuplet(self, multiply, base, min_required=0, weight=1):
+        self.tuplets.append(Tuplet(multiply, base, min_required=min_required, weight=weight))

@@ -132,7 +132,7 @@ def beam_notes(notes, tuplet):
         group = list(group)
 
         # if it is notes and not singleton, beam it
-        if key and len(group) > 1: abj.attach(abj.Beam(), group)
+        # if key and len(group) > 1: abj.attach(abj.Beam(), group)
 
 def filter_gracenotes(held_notes, new_notes):
 
