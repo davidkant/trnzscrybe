@@ -34,6 +34,8 @@ THINK ON:::
 
 def mid_2_lil(mid):
 
+        mid = int(round(mid))
+
         pitch_classes = ['c', 'cs', 'd', 'ds', 'e', 'f', 'fs', 'g', 'gs', 'a', 'as', 'b']
         pitch_octaves = [',,,,', ',,,', ',,', ',', '', '\'', '\'\'', '\'\'\'']
 
@@ -99,9 +101,7 @@ def apply_rhythm(this_notes, spelled_rhythm, rhythm_strings, notes_with_lily_fea
 
             # chord
             else:
-                thisone = abj.Chord("<" + 
-                    reduce(lambda x,y: x+y, [mid_2_lil(n.pitch) for n in this_notes]) + 
-                    ">" + rhythm_strings(base))
+                    thisone = abj.Chord("<" + reduce(lambda x,y: x+" "+y, [mid_2_lil(n.pitch) for n in this_notes]) + ">" + rhythm_strings(base))
 
             # append to subnotes
             subnotes.append(thisone)
