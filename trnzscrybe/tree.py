@@ -183,9 +183,9 @@ class Tree:
     def grow(self, time_signature, beat_division_scheme):
         
         # create and grow limbs
-        self.limbs = [Node(div).grow(time_signature, beat_division_scheme)
-                      for div in list(set([t.duration_in_beats() 
-                      for t in beat_division_scheme.tuplets]))]
+        self.limbs = [Node(div).grow(time_signature, beat_division_scheme) 
+            for div in list(set([t.duration_in_beats() for t in beat_division_scheme.tuplets 
+                if t.duration_in_beats() <= time_signature.num_beats]))]
 
         # print list(set([t.duration_in_beats() for t in beat_division_scheme.tuplets]))
         

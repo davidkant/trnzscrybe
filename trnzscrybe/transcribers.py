@@ -37,7 +37,7 @@ def mid_2_lil(mid):
         mid = int(round(mid))
 
         pitch_classes = ['c', 'cs', 'd', 'ds', 'e', 'f', 'fs', 'g', 'gs', 'a', 'as', 'b']
-        pitch_octaves = [',,,,', ',,,', ',,', ',', '', '\'', '\'\'', '\'\'\'']
+        pitch_octaves = [',,,,', ',,,', ',,', ',', '', '\'', '\'\'', '\'\'\'', '\'\'\'\'', '\'\'\'\'\'']
 
         pitch_class = pitch_classes[mid%12]
         pitch_octave = pitch_octaves[mid/12]
@@ -169,7 +169,7 @@ def attach_gracenotes(gracenotes, receiver, base, rhythm_strings):
             <= grace_chord_delta:
 
             gracenotes_abj = [abj.Chord("<" + 
-                reduce(lambda x,y: x+y, [mid_2_lil(n.pitch) for n in gracenotes]) + 
+                reduce(lambda x,y: x+" "+y, [mid_2_lil(n.pitch) for n in gracenotes]) + 
                 ">" + rhythm_strings(base/((len(gracenotes)+1)/2*2)))]
 
         # else, make separate gracenotes
@@ -377,7 +377,7 @@ def transcribe_tuplet(tuplet, staff, time_signature, holdover=None, push=None, l
         #--- finally -------------------------------#
         
         # attach grace notes
-        attach_gracenotes(gracenotes, subnotes[-1], spelling[0][1], rhythm_strings)
+        #attach_gracenotes(gracenotes, subnotes[-1], spelling[0][1], rhythm_strings)
         
         # flag any ties
         if held_ons: is_tied = True
