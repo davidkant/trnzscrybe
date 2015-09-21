@@ -94,8 +94,8 @@ class Tuplet:
         return transcribe_tuplet(self, staff, time_signature, holdover=holdover, push=push, listeners=listeners, verbose=verbose)
 
     def __repr__(self):
-        return "Tuplet(duration=%r, divisions=%r, base=%r, hits=%r)" % \
-            (self.duration, self.divisions, self.base, self.hits)
+        return "Tuplet(multiply=%r, base=%r)" % \
+            (self.multiply, self.base)
     
     def __str__(self):
         return "%r-er %r-let" % (self.base, self.divisions)

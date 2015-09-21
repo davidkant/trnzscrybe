@@ -101,7 +101,7 @@ def apply_rhythm(this_notes, spelled_rhythm, rhythm_strings, notes_with_lily_fea
 
             # chord
             else:
-                    thisone = abj.Chord("<" + reduce(lambda x,y: x+" "+y, [mid_2_lil(n.pitch) for n in this_notes]) + ">" + rhythm_strings(base))
+                thisone = abj.Chord("<" + reduce(lambda x,y: x+" "+y, [mid_2_lil(n.pitch) for n in this_notes]) + ">" + rhythm_strings(base) + lily_features)
 
             # append to subnotes
             subnotes.append(thisone)
@@ -109,6 +109,7 @@ def apply_rhythm(this_notes, spelled_rhythm, rhythm_strings, notes_with_lily_fea
     # if more than one subnote then tie them all up
     # first count how many
     # then reach back into subnotes and tie themup
+    # wait this shouldn't work... meaning it probs doesn't...
 
     how_many = sum([x for (x,y) in spelled_rhythm])
 
@@ -175,7 +176,7 @@ def attach_gracenotes(gracenotes, receiver, base, rhythm_strings):
         # else, make separate gracenotes
         else:
             gracenotes_abj = [abj.Note(mid_2_lil(gracenote.pitch) + 
-                rhythm_strings(base/((len(gracenotes)+1)/2*2))) for gracenote in gracenotes] 
+                rhythm_strings(base/((min(3,len(gracenotes))+1)/2*2))) for gracenote in gracenotes] # <--// this min 3 thing is a hack...
 
         # add to container
         grace_container = abj.scoretools.GraceContainer(gracenotes_abj, kind='grace')
@@ -196,8 +197,15 @@ def tieitup(held_notes, staff):
 
         # previous note: last leaf of the previus tuplet 
         # FUCKING hardcoded assumes everything is a tuplet.
+        # not_first_beat = len(staff[-1])!=0
         not_first_beat = len(staff[-1])!=1
+        # print not_first_beat
+        # print len(staff)
+        # print staff[-1][-1]
+        # print 'no'
         last_prev = staff[-1 if not_first_beat else -2][-2 if not_first_beat else -1][-1]
+        # last_prev = staff[-1 if not_first_beat else -2][-1 if not_first_beat else -1][-1]
+        # print last_prev
 
         # current note: first leaf of the current tuplet
         firs_curr = staff[-1][-1][0]
@@ -226,7 +234,7 @@ def transcribe_tuplet(tuplet, staff, time_signature, holdover=None, push=None, l
 
     def rhythm_strings(duration):
         """Quaver for this duration in this time sig."""
-        return dur_map[duration]
+        return dur_map[duration] 
 
     #--- setup ---------------------------------#
 
@@ -257,6 +265,10 @@ def transcribe_tuplet(tuplet, staff, time_signature, holdover=None, push=None, l
 
     """
 
+    # scope tied notes outside of the loop
+    tied_notes = []  # this is the grand list of pairs
+    prev_tied_froms_abj = [] # this is prev frame passed along init to []
+
     for i,event in enumerate(tuplet.differentiate()):
 
         if verbose: print "\ntranscribing event {0}".format(i)
@@ -280,7 +292,8 @@ def transcribe_tuplet(tuplet, staff, time_signature, holdover=None, push=None, l
         if verbose:
             print "\n  held notes {0}".format(held_notes)
             print "  new notes {0}".format(new_notes)
-        
+            print "  tied notes {0}".format(tied_notes)
+
         #--- parse on/offs -------------------------#
 
         """look through note offs and find the corres
@@ -316,7 +329,7 @@ def transcribe_tuplet(tuplet, staff, time_signature, holdover=None, push=None, l
                 new_offs.pop(index)
 
         if verbose:
-            print "\n  still being held {0}".format(held_ons)
+            print "\n  still being held (THATS A TIE) {0}".format(held_ons)
             print "\n  gracenotes {0}".format(gracenotes) 
 
         #--- spell event ---------------------------#
@@ -377,13 +390,79 @@ def transcribe_tuplet(tuplet, staff, time_signature, holdover=None, push=None, l
         #--- finally -------------------------------#
         
         # attach grace notes
-        #attach_gracenotes(gracenotes, subnotes[-1], spelling[0][1], rhythm_strings)
+        attach_gracenotes(gracenotes, subnotes[-1], spelling[0][1], rhythm_strings)
         
         # flag any ties
         if held_ons: is_tied = True
 
-        # append to leaves
+        # append to eaves
         leaves.extend(subnotes)
+
+        #--- ties ----------------------------------#
+
+        """if incoming tie check for correspond note
+        an incoming tie is ay held note (still on)
+        if it matches to a noteoff it's off and don't care
+        but if it comes in held and does off we want to 
+        tie it. shouldn't we be doins that aboe? before
+        new and held has the new part?
+        
+        if held_ons grab them from subnotes and pass along in list
+        held_ons are the notes that are tied_TO
+        new_and_held_ons are the notes that are tied_FROM
+        wait since held_ons is in new_and_held_ons aren't we 
+        going to grab the same note twice?
+
+        exactly, that logic is incorrect. held_ons is
+        NOT the held_TO b/c notes that are turned off
+        this tie can be held_TO. go back up top and revise.
+
+        uhh i take it back again
+
+        TIED_TO = held_ons (after b/ing filtered for offs)
+        TIED_FROMS = new_and_held_ons 
+
+        this means some notes are BOTH tos and froms
+        
+        1. identify tied_to/froms
+        2. grab them from subnotes
+        3. put them in the right lists/pairs
+        4. pass along froms
+        5. store to/from pairs
+        
+        """
+        # # 1. identify tied_to/froms
+        # curr_tied_tos = held_ons
+        # curr_tied_froms = new_and_held_ons
+
+        # # 2. grab abjad notes from subnotes: filter for same pitch
+        # # and grab the last (most recent) matching subnote
+        # curr_tied_tos_abj = [filter(
+        #     lambda x:x.written_pitch.numbered_pitch.pitch_number+60 == p.pitch, 
+        #     subnotes)[-1] for p in curr_tied_tos]
+        # curr_tied_froms_abj = [filter(
+        #     lambda x:x.written_pitch.numbered_pitch.pitch_number+60 == p.pitch, 
+        #     subnotes)[-1] for p in curr_tied_froms]
+
+        # # 3. pair any prev_tied_from_abj wth curr_tied_tos_abj
+        # for prev_from in prev_tied_froms_abj:
+
+        #     # look for a  match in curr_tied_tos_abj
+        #     matches = [i for i,curr_to in enumerate(curr_tied_tos_abj) if 
+        #                prev_from.written_pitch.numbered_pitch.pitch_number+60 == 
+        #                curr_to.written_pitch.numbered_pitch.pitch_number+60]
+
+        #     # if a match is found
+        #     if index:
+        #         # pop first match
+        #         curr_to = curr_tied_tos_abj.pop(matches[0])
+        #         # add it to tied_notes as tuple
+        #         tied_notes += [(prev_from,curr_to)]
+
+        # # 4. curr_tied_froms_abj get passed to next i
+        # prev_tied_froms_abj = curr_tied_froms_abj
+
+        #--- and  ----------------------------------#
 
         # pass along any holdover and push
         holdover = new_and_held_ons
@@ -577,12 +656,18 @@ def transcribe(notes, staff=None, time_signatures=None, tempi=None, beat_divisio
 
     #--- transcribe measures -------------------#
 
+    # progress bar?
+    num_measures = len(measures)
+
     # init holdover
     holdover = None
     push = None
 
     # loop thru measures and transcribe them
     for measure in measures:
+
+        print '\r{0}/{1}'.format(measure.measure_number,num_measures),
+
         holdover, push = measure.transcribe(staff, 
             holdover=holdover, 
             push=push,
