@@ -1,5 +1,5 @@
 # top level folder visibility
-__init__.py
+#__init__.py
 
 *.py[co]
 
@@ -33,7 +33,7 @@ nosetests.xml
 # Mac OS X
 .DS_Store
 .DS_Store?
-._*
+#._*
 .Spotlight-V100
 .Trashes
 ehthumbs.db

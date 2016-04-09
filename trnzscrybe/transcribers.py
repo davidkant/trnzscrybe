@@ -36,7 +36,10 @@ def mid_2_lil(mid):
 
         mid = int(round(mid))
 
-        pitch_classes = ['c', 'cs', 'd', 'ds', 'e', 'f', 'fs', 'g', 'gs', 'a', 'as', 'b']
+        # pitch_classes = ['c', 'cs', 'd', 'ds', 'e', 'f', 'fs', 'g', 'gs', 'a', 'as', 'b']
+        # pitch_classes = ['c', 'cs!', 'd', 'ds!', 'e', 'f', 'fs!', 'g', 'gs!', 'a', 'as!', 'b']
+        # pitch_classes = ['c', 'cs!', 'd', 'ef!', 'e', 'f', 'fs!', 'g', 'af!', 'a', 'bf!', 'b']
+        pitch_classes = ['c', 'df', 'd', 'ef', 'e', 'f', 'fs', 'g', 'af', 'a', 'bf', 'b']
         pitch_octaves = [',,,,', ',,,', ',,', ',', '', '\'', '\'\'', '\'\'\'', '\'\'\'\'', '\'\'\'\'\'']
 
         pitch_class = pitch_classes[mid%12]
@@ -171,12 +174,13 @@ def attach_gracenotes(gracenotes, receiver, base, rhythm_strings):
 
             gracenotes_abj = [abj.Chord("<" + 
                 reduce(lambda x,y: x+" "+y, [mid_2_lil(n.pitch) for n in gracenotes]) + 
-                ">" + rhythm_strings(base/((len(gracenotes)+1)/2*2)))]
+                ">" + rhythm_strings(base/((min(3,len(gracenotes))+1)/2*2)))]
 
         # else, make separate gracenotes
         else:
-            gracenotes_abj = [abj.Note(mid_2_lil(gracenote.pitch) + 
-                rhythm_strings(base/((min(3,len(gracenotes))+1)/2*2))) for gracenote in gracenotes] # <--// this min 3 thing is a hack...
+            # gracenotes_abj = [abj.Note(mid_2_lil(gracenote.pitch) + 
+            #     rhythm_strings(base/((min(3,len(gracenotes))+1)/2*2))) for gracenote in gracenotes] # <--// this min 3 thing is a hack...
+            gracenotes_abj = [abj.Note(mid_2_lil(gracenote.pitch) + rhythm_strings(base/(2))) for gracenote in gracenotes]
 
         # add to container
         grace_container = abj.scoretools.GraceContainer(gracenotes_abj, kind='grace')
